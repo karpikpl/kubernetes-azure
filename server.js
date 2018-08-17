@@ -36,6 +36,7 @@ http.createServer(function(request, response) {
   if(uri === '/api/version') {
     response.writeHead(200, {"Content-Type": "text/plain"});
     response.write("Version: 1.1.1.1\n");
+    response.write("Build: #{Build.BuildId}#\n");
     response.end();
     return;
   }
@@ -51,7 +52,7 @@ http.createServer(function(request, response) {
     if (fs.statSync(filename).isDirectory()) filename += '/index.html';
 
     fs.readFile(filename, "binary", function(err, file) {
-      if(err) {        
+      if(err) {
         response.writeHead(500, {"Content-Type": "text/plain"});
         response.write(err + "\n");
         response.end();
