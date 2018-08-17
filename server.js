@@ -35,7 +35,7 @@ http.createServer(function(request, response) {
 
   if(uri === '/api/version') {
     response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Version: 1.1.1.2\n");
+    response.write("Version: 1.1.1.3\n");
     response.write("Build: #{Build.BuildId}#\n");
     response.end();
     return;
