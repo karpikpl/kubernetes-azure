@@ -1,13 +1,16 @@
 {
-  "name": "nodejs-webapp",
-  "version": "0.0.0",
-  "description": "nodejs-webapp",
-  "main": "server.js",
-  "author": {
-    "name": "desattir"
-  },
-  "dependencies": {
-    "applicationinsights": "^1.0.0",
-    "nodemon": "~1.17.3"
-  }
+    "name": "nodejs-webapp",
+    "version": "0.0.0",
+    "description": "nodejs-webapp",
+    "main": "server.js",
+    "author": {
+        "name": "desattir"
+    },
+    "dependencies": {
+        "applicationinsights": "^1.0.0",
+        "nodemon": "^1.18.3"
+    },
+    "scripts": {
+        "start": "APPINSIGHTS_INSTRUMENTATIONKEY=3b1aa0c6-aba9-46b5-99e4-bac520749da3 nodemon server.js"
+    }
 }
