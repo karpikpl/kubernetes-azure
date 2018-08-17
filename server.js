@@ -14,6 +14,22 @@ http.createServer(function(request, response) {
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd(), uri);
 
+  if(uri === '/api/random') {
+        response.writeHead(200, {"Content-Type": "text/plain"});
+        response.write("Guaranteed Random Number: 4" + "\n");
+        response.end();
+        return;
+  }
+
+  if(uri === '/api/slowrandom') {
+        setTimeout( () => {
+            response.writeHead(200, {"Content-Type": "text/plain"});
+            response.write("Guaranteed Random Number: 5" + "\n");
+            response.end();
+        },5000);
+        return;
+  }
+
   fs.exists(filename, function(exists) {
     if(!exists) {
       response.writeHead(404, {"Content-Type": "text/plain"});
