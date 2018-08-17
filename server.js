@@ -33,6 +33,13 @@ http.createServer(function(request, response) {
     return;
   }
 
+  if(uri === '/api/version') {
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Version: 0.6.0.17\n");
+    response.end();
+    return;
+  }
+
   fs.exists(filename, function(exists) {
     if(!exists) {
       response.writeHead(404, {"Content-Type": "text/plain"});
