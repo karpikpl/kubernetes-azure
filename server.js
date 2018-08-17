@@ -35,7 +35,7 @@ http.createServer(function(request, response) {
 
   if(uri === '/api/version') {
     response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Version: 0.6.0.17\n");
+    response.write("Version: 1.1.1.1\n");
     response.end();
     return;
   }
