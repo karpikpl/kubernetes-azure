@@ -7,6 +7,7 @@ var http = require("http"),
     url = require("url"),
     path = require("path"),
     fs = require("fs"),
+    os = require("os"),
     port = process.argv[2] || 8080;
 
 http.createServer(function(request, response) {
@@ -17,6 +18,7 @@ http.createServer(function(request, response) {
   if(uri === '/api/random') {
         response.writeHead(200, {"Content-Type": "text/plain"});
         response.write("Guaranteed Random Number: 4" + "\n");
+        response.write("\n\n\nHostname: " + os.hostname() + "\n");
         response.end();
         return;
   }
@@ -25,9 +27,10 @@ http.createServer(function(request, response) {
         setTimeout( () => {
             response.writeHead(200, {"Content-Type": "text/plain"});
             response.write("Guaranteed Random Number: 5" + "\n");
+            response.write("\n\n\nHostname: " + os.hostname() + "\n");
             response.end();
         },5000);
-        return;
+    return;
   }
 
   fs.exists(filename, function(exists) {
