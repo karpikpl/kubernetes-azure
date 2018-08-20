@@ -2,7 +2,7 @@
 The repository is a simple (almost dependency less) node.js app - it runs on node:8
 
 # Build process
-![Screen Shot 2018-08-17 at 1.55.51 PM.png](/.attachments/Screen%20Shot%202018-08-17%20at%201.55.51%20PM-aaddbf97-631a-44cf-b6b0-539ee2aa7373.png)
+![Screen Shot 2018-08-17 at 1.55.51 PM.png](../.attachments/Screen%20Shot%202018-08-17%20at%201.55.51%20PM-aaddbf97-631a-44cf-b6b0-539ee2aa7373.png)
 
 First docker image is built using `docker build . -t avahack.azurecr.io/avahackkub:<version>` where
 * avahack.azurecr.io is the name of our container registry
