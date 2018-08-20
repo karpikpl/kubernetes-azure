@@ -1,5 +1,5 @@
 # Deployment job
-![Screen Shot 2018-08-17 at 2.24.11 PM.png](/.attachments/Screen%20Shot%202018-08-17%20at%202.24.11%20PM-65c36e07-f615-441b-aa77-216a99c89f51.png)
+![Screen Shot 2018-08-17 at 2.24.11 PM.png](../.attachments/Screen%20Shot%202018-08-17%20at%202.24.11%20PM-65c36e07-f615-441b-aa77-216a99c89f51.png)
 
 ## Install
 Makes sure Helm is installed on the build machine
