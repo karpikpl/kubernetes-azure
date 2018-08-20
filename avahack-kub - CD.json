@@ -1,1 +1,915 @@
-{"source":8,"revision":12,"description":null,"createdBy":{"displayName":"piotr.karpala","url":"https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70","_links":{"avatar":{"href":"https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"}},"id":"ce3432ee-a7e7-66cb-9706-54d6e18b8a70","uniqueName":"piotr.karpala@avanade.com","imageUrl":"https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70","descriptor":"aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"},"createdOn":"2018-08-13T03:47:45.430Z","modifiedBy":{"displayName":"piotr.karpala","url":"https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70","_links":{"avatar":{"href":"https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"}},"id":"ce3432ee-a7e7-66cb-9706-54d6e18b8a70","uniqueName":"piotr.karpala@avanade.com","imageUrl":"https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70","descriptor":"aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"},"modifiedOn":"2018-08-17T20:52:19.247Z","isDeleted":false,"variables":{},"variableGroups":[],"environments":[{"id":1,"name":"Dev","rank":1,"owner":{"displayName":"piotr.karpala","url":"https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70","_links":{"avatar":{"href":"https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"}},"id":"ce3432ee-a7e7-66cb-9706-54d6e18b8a70","uniqueName":"piotr.karpala@avanade.com","imageUrl":"https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70","descriptor":"aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"},"variables":{},"variableGroups":[],"preDeployApprovals":{"approvals":[{"rank":1,"isAutomated":true,"isNotificationOn":false,"id":1}],"approvalOptions":{"requiredApproverCount":null,"releaseCreatorCanBeApprover":true,"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped":false,"enforceIdentityRevalidation":false,"timeoutInMinutes":0,"executionOrder":1}},"deployStep":{"id":2},"postDeployApprovals":{"approvals":[{"rank":1,"isAutomated":true,"isNotificationOn":false,"id":9}],"approvalOptions":{"requiredApproverCount":null,"releaseCreatorCanBeApprover":true,"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped":false,"enforceIdentityRevalidation":false,"timeoutInMinutes":0,"executionOrder":2}},"deployPhases":[{"deploymentInput":{"parallelExecution":{"parallelExecutionType":"none"},"skipArtifactsDownload":false,"artifactsDownloadInput":{"downloadInputs":[]},"queueId":4,"demands":[],"enableAccessToken":false,"timeoutInMinutes":0,"jobCancelTimeoutInMinutes":1,"condition":"succeeded()","overrideInputs":{}},"rank":1,"phaseType":1,"name":"Phase1","workflowTasks":[{"environment":{},"taskId":"068d5909-43e6-48c5-9e01-7c8a94816220","version":"0.*","name":"Install Helm 2.9.1","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":"task","overrideInputs":{},"condition":"succeeded()","inputs":{"helmVersion":"2.9.1","checkLatestHelmVersion":"true","installKubeCtl":"true","kubectlVersion":"1.10.3","checkLatestKubeCtl":"false"}},{"environment":{},"taskId":"afa7d54d-537b-4dc8-b60a-e0eeea2c9a87","version":"0.*","name":"Helm init","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":null,"overrideInputs":{},"condition":"succeeded()","inputs":{"connectionType":"Azure Resource Manager","azureSubscriptionEndpoint":"07dfca33-d2d6-4844-b1ed-6fa52aefc2a8","azureResourceGroup":"9f83","kubernetesCluster":"avahack-kub","kubernetesServiceEndpoint":"","namespace":"","command":"init","chartType":"Name","chartName":"","chartPath":"","version":"","releaseName":"","overrideValues":"","valueFile":"","destination":"$(Build.ArtifactStagingDirectory)","canaryimage":"false","upgradetiller":"false","updatedependency":"false","save":"true","install":"true","recreate":"false","resetValues":"false","force":"false","waitForExecution":"true","arguments":"","enableTls":"false","caCert":"","certificate":"","privatekey":"","tillernamespace":""}},{"environment":{},"taskId":"afa7d54d-537b-4dc8-b60a-e0eeea2c9a87","version":"0.*","name":"Helm upgrade","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":null,"overrideInputs":{},"condition":"succeeded()","inputs":{"connectionType":"Azure Resource Manager","azureSubscriptionEndpoint":"07dfca33-d2d6-4844-b1ed-6fa52aefc2a8","azureResourceGroup":"9f83","kubernetesCluster":"avahack-kub","kubernetesServiceEndpoint":"","namespace":"dev","command":"upgrade","chartType":"FilePath","chartName":"","chartPath":"$(System.DefaultWorkingDirectory)/**/sampleapp-*.tgz","version":"","releaseName":"azuredevops","overrideValues":"","valueFile":"","destination":"","canaryimage":"false","upgradetiller":"false","updatedependency":"false","save":"true","install":"true","recreate":"false","resetValues":"false","force":"false","waitForExecution":"true","arguments":"--set image.repository=avahack.azurecr.io/avahackkub --set image.tag=$(Build.BuildId) --set applicationInsights.InstrumentationKey=3b1aa0c6-aba9-46b5-99e4-bac520749da3 --set ingress.enabled=true --set ingress.hostname=dev-sampleapp.ecf09b3edb444f8480b4.eastus.aksapp.io","enableTls":"false","caCert":"","certificate":"","privatekey":"","tillernamespace":""}}]}],"environmentOptions":{"emailNotificationType":"OnlyOnFailure","emailRecipients":"release.environment.owner;release.creator","skipArtifactsDownload":false,"timeoutInMinutes":0,"enableAccessToken":false,"publishDeploymentStatus":false,"badgeEnabled":false,"autoLinkWorkItems":false,"pullRequestDeploymentEnabled":false},"demands":[],"conditions":[{"name":"ReleaseStarted","conditionType":1,"value":""}],"executionPolicy":{"concurrencyCount":0,"queueDepthCount":0},"schedules":[],"currentRelease":{"id":17,"url":"https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/releases/17","_links":{}},"retentionPolicy":{"daysToKeep":30,"releasesToKeep":3,"retainBuild":true},"processParameters":{},"properties":{},"preDeploymentGates":{"id":0,"gatesOptions":null,"gates":[]},"postDeploymentGates":{"id":0,"gatesOptions":{"isEnabled":false,"timeout":1440,"samplingInterval":15,"stabilizationTime":5,"minimumSuccessDuration":0},"gates":[{"tasks":[{"environment":{},"taskId":"9c3e8943-130d-4c78-ac63-8af81df62dfb","version":"1.*","name":"Invoke REST API: GET","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":"task","overrideInputs":{},"condition":"succeeded()","inputs":{"connectedServiceNameSelector":"connectedServiceName","connectedServiceName":"","connectedServiceNameARM":"","method":"GET","headers":"{\n\"Content-Type\":\"application/json\", \n\"PlanUrl\": \"$(system.CollectionUri)\", \n\"ProjectId\": \"$(system.TeamProjectId)\", \n\"HubName\": \"$(system.HostType)\", \n\"PlanId\": \"$(system.PlanId)\", \n\"JobId\": \"$(system.JobId)\", \n\"TimelineId\": \"$(system.TimelineId)\", \n\"TaskInstanceId\": \"$(system.TaskInstanceId)\", \n\"AuthToken\": \"$(system.AccessToken)\"\n}","body":"","urlSuffix":"","waitForCompletion":"false","successCriteria":""}}]}]},"environmentTriggers":[],"badgeUrl":"https://avahack2.vsrm.visualstudio.com/_apis/public/Release/badge/5c94de17-999c-4c84-ad4b-0c882f0c9379/1/1"},{"id":2,"name":"Canary","rank":2,"owner":{"displayName":"piotr.karpala","url":"https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70","_links":{"avatar":{"href":"https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"}},"id":"ce3432ee-a7e7-66cb-9706-54d6e18b8a70","uniqueName":"piotr.karpala@avanade.com","imageUrl":"https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70","descriptor":"aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"},"variables":{},"variableGroups":[],"preDeployApprovals":{"approvals":[{"rank":1,"isAutomated":false,"isNotificationOn":false,"approver":{"displayName":"Jonathon Powell","url":"https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/94f2da33-3374-639d-9b4c-a0e382a37862","_links":{"avatar":{"href":"https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.OTRmMmRhMzMtMzM3NC03MzlkLTliNGMtYTBlMzgyYTM3ODYy"}},"id":"94f2da33-3374-639d-9b4c-a0e382a37862","uniqueName":"jonathon.w.powell@avanade.com","imageUrl":"https://avahack2.visualstudio.com/_api/_common/identityImage?id=94f2da33-3374-639d-9b4c-a0e382a37862","descriptor":"aad.OTRmMmRhMzMtMzM3NC03MzlkLTliNGMtYTBlMzgyYTM3ODYy"},"id":8}],"approvalOptions":{"requiredApproverCount":null,"releaseCreatorCanBeApprover":true,"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped":false,"enforceIdentityRevalidation":false,"timeoutInMinutes":0,"executionOrder":1}},"deployStep":{"id":5},"postDeployApprovals":{"approvals":[{"rank":1,"isAutomated":true,"isNotificationOn":false,"id":6}],"approvalOptions":{"requiredApproverCount":null,"releaseCreatorCanBeApprover":true,"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped":false,"enforceIdentityRevalidation":false,"timeoutInMinutes":0,"executionOrder":2}},"deployPhases":[{"deploymentInput":{"parallelExecution":{"parallelExecutionType":"none"},"skipArtifactsDownload":false,"artifactsDownloadInput":{"downloadInputs":[]},"queueId":4,"demands":[],"enableAccessToken":false,"timeoutInMinutes":0,"jobCancelTimeoutInMinutes":1,"condition":"succeeded()","overrideInputs":{}},"rank":1,"phaseType":1,"name":"Phase1","workflowTasks":[{"environment":{},"taskId":"068d5909-43e6-48c5-9e01-7c8a94816220","version":"0.*","name":"Install Helm 2.9.1","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":"task","overrideInputs":{},"condition":"succeeded()","inputs":{"helmVersion":"2.9.1","checkLatestHelmVersion":"true","installKubeCtl":"true","kubectlVersion":"1.10.3","checkLatestKubeCtl":"false"}},{"environment":{},"taskId":"afa7d54d-537b-4dc8-b60a-e0eeea2c9a87","version":"0.*","name":"Helm init","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":null,"overrideInputs":{},"condition":"succeeded()","inputs":{"connectionType":"Azure Resource Manager","azureSubscriptionEndpoint":"07dfca33-d2d6-4844-b1ed-6fa52aefc2a8","azureResourceGroup":"9f83","kubernetesCluster":"avahack-kub","kubernetesServiceEndpoint":"","namespace":"","command":"init","chartType":"Name","chartName":"","chartPath":"","version":"","releaseName":"","overrideValues":"","valueFile":"","destination":"$(Build.ArtifactStagingDirectory)","canaryimage":"false","upgradetiller":"false","updatedependency":"false","save":"true","install":"true","recreate":"false","resetValues":"false","force":"false","waitForExecution":"true","arguments":"","enableTls":"false","caCert":"","certificate":"","privatekey":"","tillernamespace":""}},{"environment":{},"taskId":"afa7d54d-537b-4dc8-b60a-e0eeea2c9a87","version":"0.*","name":"Helm upgrade","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":null,"overrideInputs":{},"condition":"succeeded()","inputs":{"connectionType":"Azure Resource Manager","azureSubscriptionEndpoint":"07dfca33-d2d6-4844-b1ed-6fa52aefc2a8","azureResourceGroup":"9f83","kubernetesCluster":"avahack-kub","kubernetesServiceEndpoint":"","namespace":"production","command":"upgrade","chartType":"FilePath","chartName":"","chartPath":"$(System.DefaultWorkingDirectory)/**/sampleapp-*.tgz","version":"","releaseName":"azuredevops-prod-canary","overrideValues":"","valueFile":"","destination":"","canaryimage":"false","upgradetiller":"false","updatedependency":"false","save":"true","install":"true","recreate":"false","resetValues":"false","force":"false","waitForExecution":"true","arguments":"--set image.repository=avahack.azurecr.io/avahackkub --set image.tag=$(Build.BuildId) --set applicationInsights.InstrumentationKey=3b1aa0c6-aba9-46b5-99e4-bac520749da3 --set ingress.enabled=true --set ingress.hostname=prod-sampleapp.ecf09b3edb444f8480b4.eastus.aksapp.io --set fullnameOverride=kub-prod-canary --set replicaCount=1","enableTls":"false","caCert":"","certificate":"","privatekey":"","tillernamespace":""}}]}],"environmentOptions":{"emailNotificationType":"OnlyOnFailure","emailRecipients":"release.environment.owner;release.creator","skipArtifactsDownload":false,"timeoutInMinutes":0,"enableAccessToken":false,"publishDeploymentStatus":false,"badgeEnabled":false,"autoLinkWorkItems":false,"pullRequestDeploymentEnabled":false},"demands":[],"conditions":[{"name":"Dev","conditionType":2,"value":"4"}],"executionPolicy":{"concurrencyCount":0,"queueDepthCount":0},"schedules":[],"currentRelease":{"id":17,"url":"https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/releases/17","_links":{}},"retentionPolicy":{"daysToKeep":30,"releasesToKeep":3,"retainBuild":true},"processParameters":{},"properties":{},"preDeploymentGates":{"id":0,"gatesOptions":null,"gates":[]},"postDeploymentGates":{"id":0,"gatesOptions":{"isEnabled":false,"timeout":1440,"samplingInterval":15,"stabilizationTime":5,"minimumSuccessDuration":0},"gates":[{"tasks":[{"environment":{},"taskId":"9c3e8943-130d-4c78-ac63-8af81df62dfb","version":"1.*","name":"Invoke REST API: GET","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":"task","overrideInputs":{},"condition":"succeeded()","inputs":{"connectedServiceNameSelector":"connectedServiceName","connectedServiceName":"","connectedServiceNameARM":"","method":"GET","headers":"{\n\"Content-Type\":\"application/json\", \n\"PlanUrl\": \"$(system.CollectionUri)\", \n\"ProjectId\": \"$(system.TeamProjectId)\", \n\"HubName\": \"$(system.HostType)\", \n\"PlanId\": \"$(system.PlanId)\", \n\"JobId\": \"$(system.JobId)\", \n\"TimelineId\": \"$(system.TimelineId)\", \n\"TaskInstanceId\": \"$(system.TaskInstanceId)\", \n\"AuthToken\": \"$(system.AccessToken)\"\n}","body":"","urlSuffix":"","waitForCompletion":"false","successCriteria":""}}]}]},"environmentTriggers":[],"badgeUrl":"https://avahack2.vsrm.visualstudio.com/_apis/public/Release/badge/5c94de17-999c-4c84-ad4b-0c882f0c9379/1/2"},{"id":3,"name":"Prod","rank":3,"owner":{"displayName":"piotr.karpala","url":"https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70","_links":{"avatar":{"href":"https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"}},"id":"ce3432ee-a7e7-66cb-9706-54d6e18b8a70","uniqueName":"piotr.karpala@avanade.com","imageUrl":"https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70","descriptor":"aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"},"variables":{},"variableGroups":[],"preDeployApprovals":{"approvals":[{"rank":1,"isAutomated":false,"isNotificationOn":false,"approver":{"displayName":"Jonathon Powell","url":"https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/94f2da33-3374-639d-9b4c-a0e382a37862","_links":{"avatar":{"href":"https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.OTRmMmRhMzMtMzM3NC03MzlkLTliNGMtYTBlMzgyYTM3ODYy"}},"id":"94f2da33-3374-639d-9b4c-a0e382a37862","uniqueName":"jonathon.w.powell@avanade.com","imageUrl":"https://avahack2.visualstudio.com/_api/_common/identityImage?id=94f2da33-3374-639d-9b4c-a0e382a37862","descriptor":"aad.OTRmMmRhMzMtMzM3NC03MzlkLTliNGMtYTBlMzgyYTM3ODYy"},"id":10}],"approvalOptions":{"requiredApproverCount":null,"releaseCreatorCanBeApprover":true,"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped":false,"enforceIdentityRevalidation":false,"timeoutInMinutes":0,"executionOrder":1}},"deployStep":{"id":11},"postDeployApprovals":{"approvals":[{"rank":1,"isAutomated":true,"isNotificationOn":false,"id":12}],"approvalOptions":{"requiredApproverCount":null,"releaseCreatorCanBeApprover":true,"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped":false,"enforceIdentityRevalidation":false,"timeoutInMinutes":0,"executionOrder":2}},"deployPhases":[{"deploymentInput":{"parallelExecution":{"parallelExecutionType":"none"},"skipArtifactsDownload":false,"artifactsDownloadInput":{"downloadInputs":[]},"queueId":4,"demands":[],"enableAccessToken":false,"timeoutInMinutes":0,"jobCancelTimeoutInMinutes":1,"condition":"succeeded()","overrideInputs":{}},"rank":1,"phaseType":1,"name":"Phase1","workflowTasks":[{"environment":{},"taskId":"068d5909-43e6-48c5-9e01-7c8a94816220","version":"0.*","name":"Install Helm 2.9.1","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":"task","overrideInputs":{},"condition":"succeeded()","inputs":{"helmVersion":"2.9.1","checkLatestHelmVersion":"true","installKubeCtl":"true","kubectlVersion":"1.10.3","checkLatestKubeCtl":"false"}},{"environment":{},"taskId":"afa7d54d-537b-4dc8-b60a-e0eeea2c9a87","version":"0.*","name":"Helm init","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":null,"overrideInputs":{},"condition":"succeeded()","inputs":{"connectionType":"Azure Resource Manager","azureSubscriptionEndpoint":"07dfca33-d2d6-4844-b1ed-6fa52aefc2a8","azureResourceGroup":"9f83","kubernetesCluster":"avahack-kub","kubernetesServiceEndpoint":"","namespace":"","command":"init","chartType":"Name","chartName":"","chartPath":"","version":"","releaseName":"","overrideValues":"","valueFile":"","destination":"$(Build.ArtifactStagingDirectory)","canaryimage":"false","upgradetiller":"false","updatedependency":"false","save":"true","install":"true","recreate":"false","resetValues":"false","force":"false","waitForExecution":"true","arguments":"","enableTls":"false","caCert":"","certificate":"","privatekey":"","tillernamespace":""}},{"environment":{},"taskId":"afa7d54d-537b-4dc8-b60a-e0eeea2c9a87","version":"0.*","name":"Helm upgrade","refName":"","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":null,"overrideInputs":{},"condition":"succeeded()","inputs":{"connectionType":"Azure Resource Manager","azureSubscriptionEndpoint":"07dfca33-d2d6-4844-b1ed-6fa52aefc2a8","azureResourceGroup":"9f83","kubernetesCluster":"avahack-kub","kubernetesServiceEndpoint":"","namespace":"production","command":"upgrade","chartType":"FilePath","chartName":"","chartPath":"$(System.DefaultWorkingDirectory)/**/sampleapp-*.tgz","version":"","releaseName":"azuredevops-prod","overrideValues":"","valueFile":"","destination":"","canaryimage":"false","upgradetiller":"false","updatedependency":"false","save":"true","install":"true","recreate":"false","resetValues":"false","force":"false","waitForExecution":"true","arguments":"--set image.repository=avahack.azurecr.io/avahackkub --set image.tag=$(Build.BuildId) --set applicationInsights.InstrumentationKey=3b1aa0c6-aba9-46b5-99e4-bac520749da3 --set ingress.enabled=true --set ingress.hostname=prod-sampleapp.ecf09b3edb444f8480b4.eastus.aksapp.io --set fullnameOverride=kub-prod --set replicaCount=3","enableTls":"false","caCert":"","certificate":"","privatekey":"","tillernamespace":""}}]}],"environmentOptions":{"emailNotificationType":"OnlyOnFailure","emailRecipients":"release.environment.owner;release.creator","skipArtifactsDownload":false,"timeoutInMinutes":0,"enableAccessToken":false,"publishDeploymentStatus":false,"badgeEnabled":false,"autoLinkWorkItems":false,"pullRequestDeploymentEnabled":false},"demands":[],"conditions":[{"name":"Canary","conditionType":2,"value":"4"}],"executionPolicy":{"concurrencyCount":0,"queueDepthCount":0},"schedules":[],"currentRelease":{"id":14,"url":"https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/releases/14","_links":{}},"retentionPolicy":{"daysToKeep":30,"releasesToKeep":3,"retainBuild":true},"processParameters":{},"properties":{},"preDeploymentGates":{"id":0,"gatesOptions":null,"gates":[]},"postDeploymentGates":{"id":0,"gatesOptions":{"isEnabled":false,"timeout":1440,"samplingInterval":15,"stabilizationTime":5,"minimumSuccessDuration":0},"gates":[{"tasks":[{"environment":{},"taskId":"9c3e8943-130d-4c78-ac63-8af81df62dfb","version":"1.*","name":"Invoke REST API: GET","enabled":true,"alwaysRun":false,"continueOnError":false,"timeoutInMinutes":0,"definitionType":"task","overrideInputs":{},"condition":"succeeded()","inputs":{"connectedServiceNameSelector":"connectedServiceName","connectedServiceName":"","connectedServiceNameARM":"","method":"GET","headers":"{\n\"Content-Type\":\"application/json\", \n\"PlanUrl\": \"$(system.CollectionUri)\", \n\"ProjectId\": \"$(system.TeamProjectId)\", \n\"HubName\": \"$(system.HostType)\", \n\"PlanId\": \"$(system.PlanId)\", \n\"JobId\": \"$(system.JobId)\", \n\"TimelineId\": \"$(system.TimelineId)\", \n\"TaskInstanceId\": \"$(system.TaskInstanceId)\", \n\"AuthToken\": \"$(system.AccessToken)\"\n}","body":"","urlSuffix":"","waitForCompletion":"false","successCriteria":""}}]}]},"environmentTriggers":[],"badgeUrl":"https://avahack2.vsrm.visualstudio.com/_apis/public/Release/badge/5c94de17-999c-4c84-ad4b-0c882f0c9379/1/3"}],"artifacts":[{"sourceId":"5c94de17-999c-4c84-ad4b-0c882f0c9379:1","type":"Build","alias":"Drop","definitionReference":{"artifactSourceDefinitionUrl":{"id":"https://avahack2.visualstudio.com/_permalink/_build/index?collectionId=2d196222-cd3f-46d4-ad10-f1be9c16c2a2&projectId=5c94de17-999c-4c84-ad4b-0c882f0c9379&definitionId=1","name":""},"defaultVersionBranch":{"id":"","name":""},"defaultVersionSpecific":{"id":"","name":""},"defaultVersionTags":{"id":"","name":""},"defaultVersionType":{"id":"selectDuringReleaseCreationType","name":"Specify at the time of release creation"},"definition":{"id":"1","name":"1"},"project":{"id":"5c94de17-999c-4c84-ad4b-0c882f0c9379","name":"avahack-kub"}},"isPrimary":true,"isRetained":false}],"triggers":[{"artifactAlias":"Drop","triggerConditions":[],"triggerType":1}],"releaseNameFormat":"Release-$(rev:r)","tags":[],"properties":{"DefinitionCreationSource":{"$type":"System.String","$value":"PortalExtension VSServices/16.138.28009.2 (w3wp.exe) (Service=tfsprodcus3)"}},"id":1,"name":"avahack-kub - CD","path":"\\","projectReference":null,"url":"https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/definitions/1","_links":{"self":{"href":"https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/definitions/1"},"web":{"href":"https://avahack2.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_release?definitionId=1"}}}
+{
+    "source": 8,
+    "revision": 12,
+    "description": null,
+    "createdBy": {
+        "displayName": "piotr.karpala",
+        "url": "https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+        "_links": {
+            "avatar": {
+                "href": "https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+            }
+        },
+        "id": "ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+        "uniqueName": "piotr.karpala@avanade.com",
+        "imageUrl": "https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+        "descriptor": "aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+    },
+    "createdOn": "2018-08-13T03:47:45.430Z",
+    "modifiedBy": {
+        "displayName": "piotr.karpala",
+        "url": "https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+        "_links": {
+            "avatar": {
+                "href": "https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+            }
+        },
+        "id": "ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+        "uniqueName": "piotr.karpala@avanade.com",
+        "imageUrl": "https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+        "descriptor": "aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+    },
+    "modifiedOn": "2018-08-17T20:52:19.247Z",
+    "isDeleted": false,
+    "variables": {},
+    "variableGroups": [],
+    "environments": [{
+        "id": 1,
+        "name": "Dev",
+        "rank": 1,
+        "owner": {
+            "displayName": "piotr.karpala",
+            "url": "https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "_links": {
+                "avatar": {
+                    "href": "https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+                }
+            },
+            "id": "ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "uniqueName": "piotr.karpala@avanade.com",
+            "imageUrl": "https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "descriptor": "aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+        },
+        "variables": {},
+        "variableGroups": [],
+        "preDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 1
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": true,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 1
+            }
+        },
+        "deployStep": {
+            "id": 2
+        },
+        "postDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 9
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": true,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 2
+            }
+        },
+        "deployPhases": [{
+            "deploymentInput": {
+                "parallelExecution": {
+                    "parallelExecutionType": "none"
+                },
+                "skipArtifactsDownload": false,
+                "artifactsDownloadInput": {
+                    "downloadInputs": []
+                },
+                "queueId": 4,
+                "demands": [],
+                "enableAccessToken": false,
+                "timeoutInMinutes": 0,
+                "jobCancelTimeoutInMinutes": 1,
+                "condition": "succeeded()",
+                "overrideInputs": {}
+            },
+            "rank": 1,
+            "phaseType": 1,
+            "name": "Phase1",
+            "workflowTasks": [{
+                "environment": {},
+                "taskId": "068d5909-43e6-48c5-9e01-7c8a94816220",
+                "version": "0.*",
+                "name": "Install Helm 2.9.1",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "helmVersion": "2.9.1",
+                    "checkLatestHelmVersion": "true",
+                    "installKubeCtl": "true",
+                    "kubectlVersion": "1.10.3",
+                    "checkLatestKubeCtl": "false"
+                }
+            }, {
+                "environment": {},
+                "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+                "version": "0.*",
+                "name": "Helm init",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": null,
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "connectionType": "Azure Resource Manager",
+                    "azureSubscriptionEndpoint": "07dfca33-d2d6-4844-b1ed-6fa52aefc2a8",
+                    "azureResourceGroup": "9f83",
+                    "kubernetesCluster": "avahack-kub",
+                    "kubernetesServiceEndpoint": "",
+                    "namespace": "",
+                    "command": "init",
+                    "chartType": "Name",
+                    "chartName": "",
+                    "chartPath": "",
+                    "version": "",
+                    "releaseName": "",
+                    "overrideValues": "",
+                    "valueFile": "",
+                    "destination": "$(Build.ArtifactStagingDirectory)",
+                    "canaryimage": "false",
+                    "upgradetiller": "false",
+                    "updatedependency": "false",
+                    "save": "true",
+                    "install": "true",
+                    "recreate": "false",
+                    "resetValues": "false",
+                    "force": "false",
+                    "waitForExecution": "true",
+                    "arguments": "",
+                    "enableTls": "false",
+                    "caCert": "",
+                    "certificate": "",
+                    "privatekey": "",
+                    "tillernamespace": ""
+                }
+            }, {
+                "environment": {},
+                "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+                "version": "0.*",
+                "name": "Helm upgrade",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": null,
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "connectionType": "Azure Resource Manager",
+                    "azureSubscriptionEndpoint": "07dfca33-d2d6-4844-b1ed-6fa52aefc2a8",
+                    "azureResourceGroup": "9f83",
+                    "kubernetesCluster": "avahack-kub",
+                    "kubernetesServiceEndpoint": "",
+                    "namespace": "dev",
+                    "command": "upgrade",
+                    "chartType": "FilePath",
+                    "chartName": "",
+                    "chartPath": "$(System.DefaultWorkingDirectory)/**/sampleapp-*.tgz",
+                    "version": "",
+                    "releaseName": "azuredevops",
+                    "overrideValues": "",
+                    "valueFile": "",
+                    "destination": "",
+                    "canaryimage": "false",
+                    "upgradetiller": "false",
+                    "updatedependency": "false",
+                    "save": "true",
+                    "install": "true",
+                    "recreate": "false",
+                    "resetValues": "false",
+                    "force": "false",
+                    "waitForExecution": "true",
+                    "arguments": "--set image.repository=avahack.azurecr.io/avahackkub --set image.tag=$(Build.BuildId) --set applicationInsights.InstrumentationKey=3b1aa0c6-aba9-46b5-99e4-bac520749da3 --set ingress.enabled=true --set ingress.hostname=dev-sampleapp.ecf09b3edb444f8480b4.eastus.aksapp.io",
+                    "enableTls": "false",
+                    "caCert": "",
+                    "certificate": "",
+                    "privatekey": "",
+                    "tillernamespace": ""
+                }
+            }]
+        }],
+        "environmentOptions": {
+            "emailNotificationType": "OnlyOnFailure",
+            "emailRecipients": "release.environment.owner;release.creator",
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "enableAccessToken": false,
+            "publishDeploymentStatus": false,
+            "badgeEnabled": false,
+            "autoLinkWorkItems": false,
+            "pullRequestDeploymentEnabled": false
+        },
+        "demands": [],
+        "conditions": [{
+            "name": "ReleaseStarted",
+            "conditionType": 1,
+            "value": ""
+        }],
+        "executionPolicy": {
+            "concurrencyCount": 0,
+            "queueDepthCount": 0
+        },
+        "schedules": [],
+        "currentRelease": {
+            "id": 17,
+            "url": "https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/releases/17",
+            "_links": {}
+        },
+        "retentionPolicy": {
+            "daysToKeep": 30,
+            "releasesToKeep": 3,
+            "retainBuild": true
+        },
+        "processParameters": {},
+        "properties": {},
+        "preDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "postDeploymentGates": {
+            "id": 0,
+            "gatesOptions": {
+                "isEnabled": false,
+                "timeout": 1440,
+                "samplingInterval": 15,
+                "stabilizationTime": 5,
+                "minimumSuccessDuration": 0
+            },
+            "gates": [{
+                "tasks": [{
+                    "environment": {},
+                    "taskId": "9c3e8943-130d-4c78-ac63-8af81df62dfb",
+                    "version": "1.*",
+                    "name": "Invoke REST API: GET",
+                    "enabled": true,
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "timeoutInMinutes": 0,
+                    "definitionType": "task",
+                    "overrideInputs": {},
+                    "condition": "succeeded()",
+                    "inputs": {
+                        "connectedServiceNameSelector": "connectedServiceName",
+                        "connectedServiceName": "",
+                        "connectedServiceNameARM": "",
+                        "method": "GET",
+                        "headers": "{\n\"Content-Type\":\"application/json\", \n\"PlanUrl\": \"$(system.CollectionUri)\", \n\"ProjectId\": \"$(system.TeamProjectId)\", \n\"HubName\": \"$(system.HostType)\", \n\"PlanId\": \"$(system.PlanId)\", \n\"JobId\": \"$(system.JobId)\", \n\"TimelineId\": \"$(system.TimelineId)\", \n\"TaskInstanceId\": \"$(system.TaskInstanceId)\", \n\"AuthToken\": \"$(system.AccessToken)\"\n}",
+                        "body": "",
+                        "urlSuffix": "",
+                        "waitForCompletion": "false",
+                        "successCriteria": ""
+                    }
+                }]
+            }]
+        },
+        "environmentTriggers": [],
+        "badgeUrl": "https://avahack2.vsrm.visualstudio.com/_apis/public/Release/badge/5c94de17-999c-4c84-ad4b-0c882f0c9379/1/1"
+    }, {
+        "id": 2,
+        "name": "Canary",
+        "rank": 2,
+        "owner": {
+            "displayName": "piotr.karpala",
+            "url": "https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "_links": {
+                "avatar": {
+                    "href": "https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+                }
+            },
+            "id": "ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "uniqueName": "piotr.karpala@avanade.com",
+            "imageUrl": "https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "descriptor": "aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+        },
+        "variables": {},
+        "variableGroups": [],
+        "preDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": false,
+                "isNotificationOn": false,
+                "approver": {
+                    "displayName": "Jonathon Powell",
+                    "url": "https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/94f2da33-3374-639d-9b4c-a0e382a37862",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.OTRmMmRhMzMtMzM3NC03MzlkLTliNGMtYTBlMzgyYTM3ODYy"
+                        }
+                    },
+                    "id": "94f2da33-3374-639d-9b4c-a0e382a37862",
+                    "uniqueName": "jonathon.w.powell@avanade.com",
+                    "imageUrl": "https://avahack2.visualstudio.com/_api/_common/identityImage?id=94f2da33-3374-639d-9b4c-a0e382a37862",
+                    "descriptor": "aad.OTRmMmRhMzMtMzM3NC03MzlkLTliNGMtYTBlMzgyYTM3ODYy"
+                },
+                "id": 8
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": true,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 1
+            }
+        },
+        "deployStep": {
+            "id": 5
+        },
+        "postDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 6
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": true,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 2
+            }
+        },
+        "deployPhases": [{
+            "deploymentInput": {
+                "parallelExecution": {
+                    "parallelExecutionType": "none"
+                },
+                "skipArtifactsDownload": false,
+                "artifactsDownloadInput": {
+                    "downloadInputs": []
+                },
+                "queueId": 4,
+                "demands": [],
+                "enableAccessToken": false,
+                "timeoutInMinutes": 0,
+                "jobCancelTimeoutInMinutes": 1,
+                "condition": "succeeded()",
+                "overrideInputs": {}
+            },
+            "rank": 1,
+            "phaseType": 1,
+            "name": "Phase1",
+            "workflowTasks": [{
+                "environment": {},
+                "taskId": "068d5909-43e6-48c5-9e01-7c8a94816220",
+                "version": "0.*",
+                "name": "Install Helm 2.9.1",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "helmVersion": "2.9.1",
+                    "checkLatestHelmVersion": "true",
+                    "installKubeCtl": "true",
+                    "kubectlVersion": "1.10.3",
+                    "checkLatestKubeCtl": "false"
+                }
+            }, {
+                "environment": {},
+                "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+                "version": "0.*",
+                "name": "Helm init",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": null,
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "connectionType": "Azure Resource Manager",
+                    "azureSubscriptionEndpoint": "07dfca33-d2d6-4844-b1ed-6fa52aefc2a8",
+                    "azureResourceGroup": "9f83",
+                    "kubernetesCluster": "avahack-kub",
+                    "kubernetesServiceEndpoint": "",
+                    "namespace": "",
+                    "command": "init",
+                    "chartType": "Name",
+                    "chartName": "",
+                    "chartPath": "",
+                    "version": "",
+                    "releaseName": "",
+                    "overrideValues": "",
+                    "valueFile": "",
+                    "destination": "$(Build.ArtifactStagingDirectory)",
+                    "canaryimage": "false",
+                    "upgradetiller": "false",
+                    "updatedependency": "false",
+                    "save": "true",
+                    "install": "true",
+                    "recreate": "false",
+                    "resetValues": "false",
+                    "force": "false",
+                    "waitForExecution": "true",
+                    "arguments": "",
+                    "enableTls": "false",
+                    "caCert": "",
+                    "certificate": "",
+                    "privatekey": "",
+                    "tillernamespace": ""
+                }
+            }, {
+                "environment": {},
+                "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+                "version": "0.*",
+                "name": "Helm upgrade",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": null,
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "connectionType": "Azure Resource Manager",
+                    "azureSubscriptionEndpoint": "07dfca33-d2d6-4844-b1ed-6fa52aefc2a8",
+                    "azureResourceGroup": "9f83",
+                    "kubernetesCluster": "avahack-kub",
+                    "kubernetesServiceEndpoint": "",
+                    "namespace": "production",
+                    "command": "upgrade",
+                    "chartType": "FilePath",
+                    "chartName": "",
+                    "chartPath": "$(System.DefaultWorkingDirectory)/**/sampleapp-*.tgz",
+                    "version": "",
+                    "releaseName": "azuredevops-prod-canary",
+                    "overrideValues": "",
+                    "valueFile": "",
+                    "destination": "",
+                    "canaryimage": "false",
+                    "upgradetiller": "false",
+                    "updatedependency": "false",
+                    "save": "true",
+                    "install": "true",
+                    "recreate": "false",
+                    "resetValues": "false",
+                    "force": "false",
+                    "waitForExecution": "true",
+                    "arguments": "--set image.repository=avahack.azurecr.io/avahackkub --set image.tag=$(Build.BuildId) --set applicationInsights.InstrumentationKey=3b1aa0c6-aba9-46b5-99e4-bac520749da3 --set ingress.enabled=true --set ingress.hostname=prod-sampleapp.ecf09b3edb444f8480b4.eastus.aksapp.io --set fullnameOverride=kub-prod-canary --set replicaCount=1",
+                    "enableTls": "false",
+                    "caCert": "",
+                    "certificate": "",
+                    "privatekey": "",
+                    "tillernamespace": ""
+                }
+            }]
+        }],
+        "environmentOptions": {
+            "emailNotificationType": "OnlyOnFailure",
+            "emailRecipients": "release.environment.owner;release.creator",
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "enableAccessToken": false,
+            "publishDeploymentStatus": false,
+            "badgeEnabled": false,
+            "autoLinkWorkItems": false,
+            "pullRequestDeploymentEnabled": false
+        },
+        "demands": [],
+        "conditions": [{
+            "name": "Dev",
+            "conditionType": 2,
+            "value": "4"
+        }],
+        "executionPolicy": {
+            "concurrencyCount": 0,
+            "queueDepthCount": 0
+        },
+        "schedules": [],
+        "currentRelease": {
+            "id": 17,
+            "url": "https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/releases/17",
+            "_links": {}
+        },
+        "retentionPolicy": {
+            "daysToKeep": 30,
+            "releasesToKeep": 3,
+            "retainBuild": true
+        },
+        "processParameters": {},
+        "properties": {},
+        "preDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "postDeploymentGates": {
+            "id": 0,
+            "gatesOptions": {
+                "isEnabled": false,
+                "timeout": 1440,
+                "samplingInterval": 15,
+                "stabilizationTime": 5,
+                "minimumSuccessDuration": 0
+            },
+            "gates": [{
+                "tasks": [{
+                    "environment": {},
+                    "taskId": "9c3e8943-130d-4c78-ac63-8af81df62dfb",
+                    "version": "1.*",
+                    "name": "Invoke REST API: GET",
+                    "enabled": true,
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "timeoutInMinutes": 0,
+                    "definitionType": "task",
+                    "overrideInputs": {},
+                    "condition": "succeeded()",
+                    "inputs": {
+                        "connectedServiceNameSelector": "connectedServiceName",
+                        "connectedServiceName": "",
+                        "connectedServiceNameARM": "",
+                        "method": "GET",
+                        "headers": "{\n\"Content-Type\":\"application/json\", \n\"PlanUrl\": \"$(system.CollectionUri)\", \n\"ProjectId\": \"$(system.TeamProjectId)\", \n\"HubName\": \"$(system.HostType)\", \n\"PlanId\": \"$(system.PlanId)\", \n\"JobId\": \"$(system.JobId)\", \n\"TimelineId\": \"$(system.TimelineId)\", \n\"TaskInstanceId\": \"$(system.TaskInstanceId)\", \n\"AuthToken\": \"$(system.AccessToken)\"\n}",
+                        "body": "",
+                        "urlSuffix": "",
+                        "waitForCompletion": "false",
+                        "successCriteria": ""
+                    }
+                }]
+            }]
+        },
+        "environmentTriggers": [],
+        "badgeUrl": "https://avahack2.vsrm.visualstudio.com/_apis/public/Release/badge/5c94de17-999c-4c84-ad4b-0c882f0c9379/1/2"
+    }, {
+        "id": 3,
+        "name": "Prod",
+        "rank": 3,
+        "owner": {
+            "displayName": "piotr.karpala",
+            "url": "https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "_links": {
+                "avatar": {
+                    "href": "https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+                }
+            },
+            "id": "ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "uniqueName": "piotr.karpala@avanade.com",
+            "imageUrl": "https://avahack2.visualstudio.com/_api/_common/identityImage?id=ce3432ee-a7e7-66cb-9706-54d6e18b8a70",
+            "descriptor": "aad.Y2UzNDMyZWUtYTdlNy03NmNiLTk3MDYtNTRkNmUxOGI4YTcw"
+        },
+        "variables": {},
+        "variableGroups": [],
+        "preDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": false,
+                "isNotificationOn": false,
+                "approver": {
+                    "displayName": "Jonathon Powell",
+                    "url": "https://app.vssps.visualstudio.com/A3b3a7ee9-a356-453c-ad8d-7695dea77528/_apis/Identities/94f2da33-3374-639d-9b4c-a0e382a37862",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://avahack2.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.OTRmMmRhMzMtMzM3NC03MzlkLTliNGMtYTBlMzgyYTM3ODYy"
+                        }
+                    },
+                    "id": "94f2da33-3374-639d-9b4c-a0e382a37862",
+                    "uniqueName": "jonathon.w.powell@avanade.com",
+                    "imageUrl": "https://avahack2.visualstudio.com/_api/_common/identityImage?id=94f2da33-3374-639d-9b4c-a0e382a37862",
+                    "descriptor": "aad.OTRmMmRhMzMtMzM3NC03MzlkLTliNGMtYTBlMzgyYTM3ODYy"
+                },
+                "id": 10
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": true,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 1
+            }
+        },
+        "deployStep": {
+            "id": 11
+        },
+        "postDeployApprovals": {
+            "approvals": [{
+                "rank": 1,
+                "isAutomated": true,
+                "isNotificationOn": false,
+                "id": 12
+            }],
+            "approvalOptions": {
+                "requiredApproverCount": null,
+                "releaseCreatorCanBeApprover": true,
+                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                "enforceIdentityRevalidation": false,
+                "timeoutInMinutes": 0,
+                "executionOrder": 2
+            }
+        },
+        "deployPhases": [{
+            "deploymentInput": {
+                "parallelExecution": {
+                    "parallelExecutionType": "none"
+                },
+                "skipArtifactsDownload": false,
+                "artifactsDownloadInput": {
+                    "downloadInputs": []
+                },
+                "queueId": 4,
+                "demands": [],
+                "enableAccessToken": false,
+                "timeoutInMinutes": 0,
+                "jobCancelTimeoutInMinutes": 1,
+                "condition": "succeeded()",
+                "overrideInputs": {}
+            },
+            "rank": 1,
+            "phaseType": 1,
+            "name": "Phase1",
+            "workflowTasks": [{
+                "environment": {},
+                "taskId": "068d5909-43e6-48c5-9e01-7c8a94816220",
+                "version": "0.*",
+                "name": "Install Helm 2.9.1",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": "task",
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "helmVersion": "2.9.1",
+                    "checkLatestHelmVersion": "true",
+                    "installKubeCtl": "true",
+                    "kubectlVersion": "1.10.3",
+                    "checkLatestKubeCtl": "false"
+                }
+            }, {
+                "environment": {},
+                "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+                "version": "0.*",
+                "name": "Helm init",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": null,
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "connectionType": "Azure Resource Manager",
+                    "azureSubscriptionEndpoint": "07dfca33-d2d6-4844-b1ed-6fa52aefc2a8",
+                    "azureResourceGroup": "9f83",
+                    "kubernetesCluster": "avahack-kub",
+                    "kubernetesServiceEndpoint": "",
+                    "namespace": "",
+                    "command": "init",
+                    "chartType": "Name",
+                    "chartName": "",
+                    "chartPath": "",
+                    "version": "",
+                    "releaseName": "",
+                    "overrideValues": "",
+                    "valueFile": "",
+                    "destination": "$(Build.ArtifactStagingDirectory)",
+                    "canaryimage": "false",
+                    "upgradetiller": "false",
+                    "updatedependency": "false",
+                    "save": "true",
+                    "install": "true",
+                    "recreate": "false",
+                    "resetValues": "false",
+                    "force": "false",
+                    "waitForExecution": "true",
+                    "arguments": "",
+                    "enableTls": "false",
+                    "caCert": "",
+                    "certificate": "",
+                    "privatekey": "",
+                    "tillernamespace": ""
+                }
+            }, {
+                "environment": {},
+                "taskId": "afa7d54d-537b-4dc8-b60a-e0eeea2c9a87",
+                "version": "0.*",
+                "name": "Helm upgrade",
+                "refName": "",
+                "enabled": true,
+                "alwaysRun": false,
+                "continueOnError": false,
+                "timeoutInMinutes": 0,
+                "definitionType": null,
+                "overrideInputs": {},
+                "condition": "succeeded()",
+                "inputs": {
+                    "connectionType": "Azure Resource Manager",
+                    "azureSubscriptionEndpoint": "07dfca33-d2d6-4844-b1ed-6fa52aefc2a8",
+                    "azureResourceGroup": "9f83",
+                    "kubernetesCluster": "avahack-kub",
+                    "kubernetesServiceEndpoint": "",
+                    "namespace": "production",
+                    "command": "upgrade",
+                    "chartType": "FilePath",
+                    "chartName": "",
+                    "chartPath": "$(System.DefaultWorkingDirectory)/**/sampleapp-*.tgz",
+                    "version": "",
+                    "releaseName": "azuredevops-prod",
+                    "overrideValues": "",
+                    "valueFile": "",
+                    "destination": "",
+                    "canaryimage": "false",
+                    "upgradetiller": "false",
+                    "updatedependency": "false",
+                    "save": "true",
+                    "install": "true",
+                    "recreate": "false",
+                    "resetValues": "false",
+                    "force": "false",
+                    "waitForExecution": "true",
+                    "arguments": "--set image.repository=avahack.azurecr.io/avahackkub --set image.tag=$(Build.BuildId) --set applicationInsights.InstrumentationKey=3b1aa0c6-aba9-46b5-99e4-bac520749da3 --set ingress.enabled=true --set ingress.hostname=prod-sampleapp.ecf09b3edb444f8480b4.eastus.aksapp.io --set fullnameOverride=kub-prod --set replicaCount=3",
+                    "enableTls": "false",
+                    "caCert": "",
+                    "certificate": "",
+                    "privatekey": "",
+                    "tillernamespace": ""
+                }
+            }]
+        }],
+        "environmentOptions": {
+            "emailNotificationType": "OnlyOnFailure",
+            "emailRecipients": "release.environment.owner;release.creator",
+            "skipArtifactsDownload": false,
+            "timeoutInMinutes": 0,
+            "enableAccessToken": false,
+            "publishDeploymentStatus": false,
+            "badgeEnabled": false,
+            "autoLinkWorkItems": false,
+            "pullRequestDeploymentEnabled": false
+        },
+        "demands": [],
+        "conditions": [{
+            "name": "Canary",
+            "conditionType": 2,
+            "value": "4"
+        }],
+        "executionPolicy": {
+            "concurrencyCount": 0,
+            "queueDepthCount": 0
+        },
+        "schedules": [],
+        "currentRelease": {
+            "id": 14,
+            "url": "https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/releases/14",
+            "_links": {}
+        },
+        "retentionPolicy": {
+            "daysToKeep": 30,
+            "releasesToKeep": 3,
+            "retainBuild": true
+        },
+        "processParameters": {},
+        "properties": {},
+        "preDeploymentGates": {
+            "id": 0,
+            "gatesOptions": null,
+            "gates": []
+        },
+        "postDeploymentGates": {
+            "id": 0,
+            "gatesOptions": {
+                "isEnabled": false,
+                "timeout": 1440,
+                "samplingInterval": 15,
+                "stabilizationTime": 5,
+                "minimumSuccessDuration": 0
+            },
+            "gates": [{
+                "tasks": [{
+                    "environment": {},
+                    "taskId": "9c3e8943-130d-4c78-ac63-8af81df62dfb",
+                    "version": "1.*",
+                    "name": "Invoke REST API: GET",
+                    "enabled": true,
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "timeoutInMinutes": 0,
+                    "definitionType": "task",
+                    "overrideInputs": {},
+                    "condition": "succeeded()",
+                    "inputs": {
+                        "connectedServiceNameSelector": "connectedServiceName",
+                        "connectedServiceName": "",
+                        "connectedServiceNameARM": "",
+                        "method": "GET",
+                        "headers": "{\n\"Content-Type\":\"application/json\", \n\"PlanUrl\": \"$(system.CollectionUri)\", \n\"ProjectId\": \"$(system.TeamProjectId)\", \n\"HubName\": \"$(system.HostType)\", \n\"PlanId\": \"$(system.PlanId)\", \n\"JobId\": \"$(system.JobId)\", \n\"TimelineId\": \"$(system.TimelineId)\", \n\"TaskInstanceId\": \"$(system.TaskInstanceId)\", \n\"AuthToken\": \"$(system.AccessToken)\"\n}",
+                        "body": "",
+                        "urlSuffix": "",
+                        "waitForCompletion": "false",
+                        "successCriteria": ""
+                    }
+                }]
+            }]
+        },
+        "environmentTriggers": [],
+        "badgeUrl": "https://avahack2.vsrm.visualstudio.com/_apis/public/Release/badge/5c94de17-999c-4c84-ad4b-0c882f0c9379/1/3"
+    }],
+    "artifacts": [{
+        "sourceId": "5c94de17-999c-4c84-ad4b-0c882f0c9379:1",
+        "type": "Build",
+        "alias": "Drop",
+        "definitionReference": {
+            "artifactSourceDefinitionUrl": {
+                "id": "https://avahack2.visualstudio.com/_permalink/_build/index?collectionId=2d196222-cd3f-46d4-ad10-f1be9c16c2a2&projectId=5c94de17-999c-4c84-ad4b-0c882f0c9379&definitionId=1",
+                "name": ""
+            },
+            "defaultVersionBranch": {
+                "id": "",
+                "name": ""
+            },
+            "defaultVersionSpecific": {
+                "id": "",
+                "name": ""
+            },
+            "defaultVersionTags": {
+                "id": "",
+                "name": ""
+            },
+            "defaultVersionType": {
+                "id": "selectDuringReleaseCreationType",
+                "name": "Specify at the time of release creation"
+            },
+            "definition": {
+                "id": "1",
+                "name": "1"
+            },
+            "project": {
+                "id": "5c94de17-999c-4c84-ad4b-0c882f0c9379",
+                "name": "avahack-kub"
+            }
+        },
+        "isPrimary": true,
+        "isRetained": false
+    }],
+    "triggers": [{
+        "artifactAlias": "Drop",
+        "triggerConditions": [],
+        "triggerType": 1
+    }],
+    "releaseNameFormat": "Release-$(rev:r)",
+    "tags": [],
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "PortalExtension VSServices/16.138.28009.2 (w3wp.exe) (Service=tfsprodcus3)"
+        }
+    },
+    "id": 1,
+    "name": "avahack-kub - CD",
+    "path": "\\",
+    "projectReference": null,
+    "url": "https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/definitions/1",
+    "_links": {
+        "self": {
+            "href": "https://avahack2.vsrm.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_apis/Release/definitions/1"
+        },
+        "web": {
+            "href": "https://avahack2.visualstudio.com/5c94de17-999c-4c84-ad4b-0c882f0c9379/_release?definitionId=1"
+        }
+    }
+}
